@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
+import Layout from './Layout/Layout';
 import Mods from './screens/Mods';
 import News from './screens/News';
 
