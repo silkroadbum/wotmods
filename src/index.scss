@@ -58,3 +58,16 @@ input {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.title {
+  font-size: 50px;
+}
+
+.page-header {
+  padding: 20px 10px;
+  &--mods {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}

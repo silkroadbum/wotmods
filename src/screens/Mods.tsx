@@ -1,9 +1,12 @@
-import React from 'react';
+import Search from '../components/Search/Search';
 
 function Mods() {
   return (
     <>
-      <h1>Модификации</h1>
+      <header className="page-header page-header--mods">
+        <h1 className="title">Модификации</h1>
+        <Search />
+      </header>
     </>
   );
 }
