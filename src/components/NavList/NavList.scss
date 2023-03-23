@@ -1,0 +1,28 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list__link {
+  padding: 5px;
+  color: #ffffff;
+  transition: all 0.1s ease-in-out;
+  &--active {
+    border-bottom: 2px solid #ffffff;
+  }
+  &--active:hover {
+    border-color: #605050;
+  }
+  &:hover {
+    color: #605050;
+  }
+  &:active {
+    color: #8d7d7d;
+  }
+}
