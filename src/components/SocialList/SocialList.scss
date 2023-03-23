@@ -4,6 +4,9 @@
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
+  @media (max-width: 650px) {
+    justify-content: center;
+  }
 }
 
 .social-list__link {
