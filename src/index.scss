@@ -78,10 +78,11 @@ input {
 
 .page-header {
   padding: 20px 10px;
+  border-bottom: 1px solid #c0c0c0;
   &--mods {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
   }
 }
