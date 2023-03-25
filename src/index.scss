@@ -95,6 +95,12 @@ input {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  &--full-news {
+    text-align: center;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+  }
 }
 
 .btn:hover {
@@ -137,7 +143,13 @@ input {
 .full-news__description {
   font-size: 18px;
   text-align: justify;
+  margin-bottom: 15px;
   @media screen and (max-width: 650px) {
     font-size: 14px;
   }
+}
+
+.full-news__date {
+  margin-bottom: 15px;
+  color: #7c7c7c;
 }

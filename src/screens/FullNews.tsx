@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Watch } from 'react-loader-spinner';
 import { NewsType, StatusType } from '../types';
@@ -53,7 +53,11 @@ function FullNews() {
     <section className="full-news">
       <h1 className="full-news__title">{oneNews?.title}</h1>
       <img className="full-news__img" src="/img/news/1.jpg" alt={oneNews?.title} />
+      <p className="full-news__date">{oneNews?.date}</p>
       <p className="full-news__description">{oneNews?.description}</p>
+      <Link to="/news" className="btn btn--full-news">
+        Вернуться назад
+      </Link>
     </section>
   );
 }
