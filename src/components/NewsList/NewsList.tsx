@@ -1,12 +1,16 @@
-import { NEWS } from '../../mock/news';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store/store';
+
 import NewsCard from '../NewsCard/NewsCard';
 import './NewsList.scss';
 
 function NewsList() {
+  const { news } = useSelector((state: RootState) => state.news);
+
   return (
     <section className="news">
       <ul className="news__list">
-        {NEWS.map((item) => (
+        {news.map((item) => (
           <NewsCard key={item.id} {...item} />
         ))}
       </ul>

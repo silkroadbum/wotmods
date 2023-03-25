@@ -3,8 +3,8 @@ import axios from 'axios';
 
 import { NewsType, StatusType } from '../../types';
 
-const fetchNews = createAsyncThunk('news/fetchNews', async () => {
-  const { data } = await axios.get('https://641ca6fb1a68dc9e460ebc99.mockapi.io/news');
+export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
+  const { data } = await axios.get<NewsType[]>('https://641ca6fb1a68dc9e460ebc99.mockapi.io/news');
   return data;
 });
 
