@@ -13,7 +13,10 @@ function NewsCard({ title, imgUrl, date, id }: NewsCardProps) {
     <li className="news__item">
       <Link className="news__link" to={`/news/${id}`}>
         <div className="news__preview">
-          <img className="news__image" src={imgUrl} alt={title} />
+          <div className="news__image-wrapper">
+            <img className="news__image" src={imgUrl} alt={title} />
+          </div>
+
           <h2 className="news__title">{title}</h2>
         </div>
       </Link>
