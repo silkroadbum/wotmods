@@ -167,3 +167,11 @@ input {
   margin-bottom: 15px;
   color: #7c7c7c;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
