@@ -1,25 +1,27 @@
+import { Link } from 'react-router-dom';
 import './NewsCard.scss';
 
 type NewsCardProps = {
   title: string;
   imgUrl: string;
   date: string;
+  id: string;
 };
 
-function NewsCard({ title, imgUrl, date }: NewsCardProps) {
+function NewsCard({ title, imgUrl, date, id }: NewsCardProps) {
   return (
     <li className="news__item">
-      <a className="news__link" href="/">
+      <Link className="news__link" to={`/news/${id}`}>
         <div className="news__preview">
           <img className="news__image" src={imgUrl} alt={title} />
           <h2 className="news__title">{title}</h2>
         </div>
-      </a>
+      </Link>
       <footer className="news__footer">
         <span className="news__date">{date}</span>
-        <button className="btn" type="button">
+        <Link className="btn" to={`/news/${id}`}>
           Подробнее
-        </button>
+        </Link>
       </footer>
     </li>
   );
