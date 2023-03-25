@@ -86,3 +86,21 @@ input {
     align-items: center;
   }
 }
+
+.btn {
+  padding: 10px;
+  border: none;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #605050;
+}
+
+.btn:active {
+  background-color: #8d7d7d;
+}
