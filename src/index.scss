@@ -101,6 +101,19 @@ input {
     display: block;
     margin-left: auto;
   }
+  &--show-more {
+    width: 250px;
+    display: block;
+    border: 2px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+  &--show-more:hover {
+    color: #ffffff;
+    border: 2px solid #605050;
+  }
 }
 
 .btn:hover {
