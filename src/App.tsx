@@ -3,10 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
 import Main from './screens/Main';
-// import FullNews from './screens/FullNews';
-// import Mods from './screens/Mods';
-// import News from './screens/News';
-// import NotFound from './screens/NotFound';
 
 const FullNews = React.lazy(() => import(/* webpackChunkName: "fullNews" */ './screens/FullNews'));
 const News = React.lazy(() => import(/* webpackChunkName: "News" */ './screens/News'));
