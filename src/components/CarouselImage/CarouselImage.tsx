@@ -8,7 +8,7 @@ function CarouselImage() {
   return (
     <Carousel fade>
       {news.slice(0, 5).map((item) => (
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={1500}>
           <img className="d-block w-100" src={item.imgUrl} alt={item.title} />
         </Carousel.Item>
       ))}
