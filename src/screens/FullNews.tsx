@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Watch } from 'react-loader-spinner';
-import { NewsType, StatusType } from '../types';
+import { NewsType } from '../types';
 import { LoadingStatus } from '../types';
 
 function FullNews() {
   const [oneNews, setOneNews] = useState<NewsType>();
-  const [isLoading, setIsLoading] = useState<StatusType>(LoadingStatus.Loading);
+  const [isLoading, setIsLoading] = useState<LoadingStatus>(LoadingStatus.Loading);
   const { id } = useParams();
 
   const fetchNewsById = async (id: string | undefined) => {

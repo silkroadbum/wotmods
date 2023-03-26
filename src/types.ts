@@ -7,8 +7,6 @@ export type NewsType = {
   date: string;
 };
 
-export type StatusType = 'loading' | 'loaded' | 'error';
-
 export enum LoadingStatus {
   Loading = 'loading',
   Loaded = 'loaded',
