@@ -3,6 +3,7 @@ export type NewsType = {
   title: string;
   description: string;
   imgUrl: string;
+  imgUrlSmall: string;
   date: string;
 };
 

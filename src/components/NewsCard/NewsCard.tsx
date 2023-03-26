@@ -5,21 +5,21 @@ import './NewsCard.scss';
 
 type NewsCardProps = {
   title: string;
-  imgUrl: string;
+  imgUrlSmall: string;
   date: string;
   id: string;
 };
 
-function NewsCard({ title, imgUrl, date, id }: NewsCardProps) {
+function NewsCard({ title, imgUrlSmall, date, id }: NewsCardProps) {
   return (
     <li className="news__item">
       <Link className="news__link" to={`/news/${id}`}>
         <div className="news__preview">
           <div className="news__image-wrapper">
             <picture>
-              <source srcSet={replaceFormatImg(imgUrl, 'avif')} />
-              <source srcSet={replaceFormatImg(imgUrl, 'webp')} />
-              <img className="news__image" src={imgUrl} alt={title} loading="lazy" />
+              <source srcSet={replaceFormatImg(imgUrlSmall, 'avif')} />
+              <source srcSet={replaceFormatImg(imgUrlSmall, 'webp')} />
+              <img className="news__image" src={imgUrlSmall} alt={title} loading="lazy" />
             </picture>
           </div>
 

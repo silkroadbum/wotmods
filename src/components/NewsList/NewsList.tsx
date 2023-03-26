@@ -8,6 +8,7 @@ import './NewsList.scss';
 function NewsList() {
   const [showItemsCount, setShowItemsCount] = useState(6);
   const { news } = useSelector((state: RootState) => state.news);
+  console.log(news);
 
   const onClickShowMore = () => {
     setShowItemsCount((prev) => prev + 6);
