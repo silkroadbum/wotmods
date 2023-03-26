@@ -30,7 +30,6 @@
     overflow-y: auto;
     padding: 20px 20px;
     background-color: #000;
-    animation: burgerAnimation 0.4s;
     &.open {
       display: flex;
     }
@@ -76,6 +75,11 @@
 
 .burger-btn::after {
   bottom: 3px;
+}
+
+.burger-btn.active {
+  position: fixed;
+  right: 10px;
 }
 
 .burger-btn.active span {

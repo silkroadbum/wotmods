@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="main-footer">
       <div className="container container--footer">
-        <NavList />
+        {/* <NavList /> */}
         <p className="copyright">Анатолий Егоров &copy; {year}</p>
         <SocialList />
       </div>

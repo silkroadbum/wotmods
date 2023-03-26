@@ -16,7 +16,7 @@ function Header() {
           WOTMODS
         </Link>
         <nav className={`nav ${isActive ? 'open' : ''}`}>
-          <NavList />
+          <NavList handleClick={() => setIsActive(false)} />
         </nav>
         <button onClick={handleClickButton} className={`burger-btn ${isActive ? 'active' : ''}`}>
           <span></span>
