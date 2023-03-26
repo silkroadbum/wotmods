@@ -11,6 +11,9 @@
 .nav-list__item {
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 .nav-list__link {
