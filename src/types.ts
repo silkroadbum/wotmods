@@ -8,3 +8,9 @@ export type NewsType = {
 };
 
 export type StatusType = 'loading' | 'loaded' | 'error';
+
+export enum LoadingStatus {
+  Loading = 'loading',
+  Loaded = 'loaded',
+  Error = 'error',
+}

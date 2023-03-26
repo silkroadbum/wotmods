@@ -3,10 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Watch } from 'react-loader-spinner';
 import { NewsType, StatusType } from '../types';
+import { LoadingStatus } from '../types';
 
 function FullNews() {
   const [oneNews, setOneNews] = useState<NewsType>();
-  const [isLoading, setIsLoading] = useState<StatusType>('loading');
+  const [isLoading, setIsLoading] = useState<StatusType>(LoadingStatus.Loading);
   const { id } = useParams();
 
   const fetchNewsById = async (id: string | undefined) => {
@@ -15,10 +16,10 @@ function FullNews() {
         `https://641ca6fb1a68dc9e460ebc99.mockapi.io/news/${id}`,
       );
       setOneNews(data);
-      setIsLoading('loaded');
+      setIsLoading(LoadingStatus.Loaded);
     } catch (error) {
       console.error(error);
-      setIsLoading('error');
+      setIsLoading(LoadingStatus.Error);
     }
   };
 
@@ -26,7 +27,7 @@ function FullNews() {
     fetchNewsById(id);
   }, [id]);
 
-  if (isLoading === 'loading') {
+  if (isLoading === LoadingStatus.Loading) {
     return (
       <div className="loader-wrapper">
         <Watch
@@ -41,7 +42,7 @@ function FullNews() {
     );
   }
 
-  if (isLoading === 'error') {
+  if (isLoading === LoadingStatus.Error) {
     return (
       <div className="loader-wrapper">
         <h1>Ошибка при получении статьи!!!</h1>
@@ -53,8 +54,8 @@ function FullNews() {
     <section className="full-news">
       <h1 className="full-news__title">{oneNews?.title}</h1>
       <picture>
-        <source srcSet={oneNews?.imgUrl.replace('jpg', 'avif')} />
-        <source srcSet={oneNews?.imgUrl.replace('jpg', 'webp')} />
+        <source srcSet={oneNews?.imgUrl?.replace('jpg', 'avif')} />
+        <source srcSet={oneNews?.imgUrl?.replace('jpg', 'webp')} />
         <img className="full-news__img" src={oneNews?.imgUrl} alt={oneNews?.title} loading="lazy" />
       </picture>
       <p className="full-news__date">{oneNews?.date}</p>
