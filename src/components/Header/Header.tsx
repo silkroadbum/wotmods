@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import NavList from '../NavList/NavList';
 import './Header.scss';
 
@@ -5,9 +6,9 @@ function Header() {
   return (
     <header className="main-header">
       <div className="container container--header">
-        <a href="/" className="main-header__logo">
+        <Link to="/" className="main-header__logo">
           WOTMODS
-        </a>
+        </Link>
         <nav className="nav">
           <NavList />
         </nav>
