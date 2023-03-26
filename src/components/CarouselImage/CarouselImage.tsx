@@ -7,9 +7,9 @@ function CarouselImage() {
   const { news } = useSelector((state: RootState) => state.news);
 
   return (
-    <Carousel autoPlay infiniteLoop interval={3000} showStatus={false} showThumbs={false}>
+    <Carousel autoPlay infiniteLoop interval={2000} showStatus={false} showThumbs={false}>
       {news.slice(0, 5).map((item) => (
-        <div>
+        <div key={item.id}>
           <img src={item.imgUrl} alt={item.title} />
         </div>
       ))}
