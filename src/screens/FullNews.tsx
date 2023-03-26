@@ -52,7 +52,11 @@ function FullNews() {
   return (
     <section className="full-news">
       <h1 className="full-news__title">{oneNews?.title}</h1>
-      <img className="full-news__img" src="/img/news/1.jpg" alt={oneNews?.title} />
+      <picture>
+        <source srcSet={oneNews?.imgUrl.replace('jpg', 'avif')} />
+        <source srcSet={oneNews?.imgUrl.replace('jpg', 'webp')} />
+        <img className="full-news__img" src={oneNews?.imgUrl} alt={oneNews?.title} loading="lazy" />
+      </picture>
       <p className="full-news__date">{oneNews?.date}</p>
       <p className="full-news__description">{oneNews?.description}</p>
       <Link to="/news" className="btn btn--full-news">

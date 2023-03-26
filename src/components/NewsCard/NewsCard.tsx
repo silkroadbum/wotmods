@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+
+import { replaceFormatImg } from '../../utils/utils';
 import './NewsCard.scss';
 
 type NewsCardProps = {
@@ -14,7 +16,11 @@ function NewsCard({ title, imgUrl, date, id }: NewsCardProps) {
       <Link className="news__link" to={`/news/${id}`}>
         <div className="news__preview">
           <div className="news__image-wrapper">
-            <img className="news__image" src={imgUrl} alt={title} />
+            <picture>
+              <source srcSet={replaceFormatImg(imgUrl, 'avif')} />
+              <source srcSet={replaceFormatImg(imgUrl, 'webp')} />
+              <img className="news__image" src={imgUrl} alt={title} loading="lazy" />
+            </picture>
           </div>
 
           <h2 className="news__title">{title}</h2>
