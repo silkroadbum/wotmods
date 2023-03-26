@@ -1,10 +1,17 @@
+import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import Layout from './Layout/Layout';
-import FullNews from './screens/FullNews';
 import Main from './screens/Main';
-import Mods from './screens/Mods';
-import News from './screens/News';
-import NotFound from './screens/NotFound';
+// import FullNews from './screens/FullNews';
+// import Mods from './screens/Mods';
+// import News from './screens/News';
+// import NotFound from './screens/NotFound';
+
+const FullNews = React.lazy(() => import(/* webpackChunkName: "fullNews" */ './screens/FullNews'));
+const News = React.lazy(() => import(/* webpackChunkName: "News" */ './screens/News'));
+const Mods = React.lazy(() => import(/* webpackChunkName: "Mods" */ './screens/Mods'));
+const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ './screens/NotFound'));
 
 function App() {
   return (
@@ -12,10 +19,38 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/mods" element={<Mods />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:id" element={<FullNews />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/mods"
+            element={
+              <Suspense>
+                <Mods />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/news"
+            element={
+              <Suspense>
+                <News />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/news/:id"
+            element={
+              <Suspense>
+                <FullNews />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense>
+                <NotFound />
+              </Suspense>
+            }
+          />
         </Routes>
       </Layout>
     </>
