@@ -14,7 +14,7 @@ function CarouselImage() {
           <picture>
             <source srcSet={replaceFormatImg(item.imgUrl, 'avif')} />
             <source srcSet={replaceFormatImg(item.imgUrl, 'webp')} />
-            <img src={item.imgUrl} alt={item.title} loading="lazy" />
+            <img src={item.imgUrl} alt={item.title} />
           </picture>
         </div>
       ))}
