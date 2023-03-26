@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+ul,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -12,6 +20,10 @@ li {
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
 }
 
 html {
@@ -71,6 +83,10 @@ input {
 
 .title {
   font-size: 50px;
+  &--main {
+    text-align: center;
+    margin-bottom: 20px;
+  }
   @media screen and (max-width: 650px) {
     font-size: 36px;
   }
@@ -113,6 +129,10 @@ input {
   &--show-more:hover {
     color: #ffffff;
     border: 2px solid #605050;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 5px;
+    font-size: 14px;
   }
 }
 
@@ -174,4 +194,17 @@ input {
   justify-content: center;
   align-items: center;
   height: 600px;
+}
+
+.main-page {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.main-page__description {
+  font-size: 20px;
+  text-align: center;
+  @media screen and (max-width: 650px) {
+    font-size: 14px;
+  }
 }

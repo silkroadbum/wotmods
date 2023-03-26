@@ -1,6 +1,6 @@
-export const MENU_ITEM: [string, string] = ['Модификации', 'Новости'];
+export const MENU_ITEM = ['Главная', 'Модификации', 'Новости'] as const;
 
-export const MENU_LINK: [string, string] = ['/', '/news'];
+export const MENU_LINK = ['/', '/mods', '/news'] as const;
 
 export const SOCIAL_ITEMS = [
   {
