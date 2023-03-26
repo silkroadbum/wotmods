@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Loader from './components/Loader/Loader';
 
 import Layout from './Layout/Layout';
 import Main from './screens/Main';
@@ -18,7 +19,7 @@ function App() {
           <Route
             path="/mods"
             element={
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <Mods />
               </Suspense>
             }
@@ -26,7 +27,7 @@ function App() {
           <Route
             path="/news"
             element={
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <News />
               </Suspense>
             }
@@ -34,7 +35,7 @@ function App() {
           <Route
             path="/news/:id"
             element={
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <FullNews />
               </Suspense>
             }
@@ -42,7 +43,7 @@ function App() {
           <Route
             path="*"
             element={
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <NotFound />
               </Suspense>
             }

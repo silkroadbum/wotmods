@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Watch } from 'react-loader-spinner';
 import { NewsType, LoadingStatus } from '../types';
+import Loader from '../components/Loader/Loader';
 
 function FullNews() {
   const [oneNews, setOneNews] = useState<NewsType>();
@@ -27,18 +27,7 @@ function FullNews() {
   }, [id]);
 
   if (isLoading === LoadingStatus.Loading) {
-    return (
-      <div className="loader-wrapper">
-        <Watch
-          height="80"
-          width="80"
-          radius="48"
-          color="#000000"
-          ariaLabel="watch-loading"
-          visible={true}
-        />
-      </div>
-    );
+    return <Loader />;
   }
 
   if (isLoading === LoadingStatus.Error) {
