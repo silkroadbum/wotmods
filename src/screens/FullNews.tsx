@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Watch } from 'react-loader-spinner';
 import { NewsType, LoadingStatus } from '../types';
-import { replaceFormatImg } from '../utils/utils';
 
 function FullNews() {
   const [oneNews, setOneNews] = useState<NewsType>();
@@ -54,8 +53,8 @@ function FullNews() {
     <section className="full-news">
       <h1 className="full-news__title">{oneNews?.title}</h1>
       <picture>
-        <source srcSet={oneNews?.imgUrl && replaceFormatImg('jpg', 'avif')} />
-        <source srcSet={oneNews?.imgUrl && replaceFormatImg('jpg', 'webp')} />
+        <source srcSet={oneNews?.imgUrl?.replace('jpg', 'avif')} />
+        <source srcSet={oneNews?.imgUrl?.replace('jpg', 'webp')} />
         <img className="full-news__img" src={oneNews?.imgUrl} alt={oneNews?.title} loading="lazy" />
       </picture>
       <p className="full-news__date">{oneNews?.date}</p>
