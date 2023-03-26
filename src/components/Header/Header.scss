@@ -19,4 +19,75 @@
 .nav {
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 50px 40px;
+    background-color: #000;
+    animation: burgerAnimation 0.4s;
+    &.open {
+      display: flex;
+    }
+  }
+}
+
+.burger-btn {
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.burger-btn span {
+  height: 2px;
+  width: 100%;
+  transform: scale(1);
+  background-color: #fff;
+}
+
+.burger-btn::after,
+.burger-btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.burger-btn::before {
+  top: 3px;
+}
+
+.burger-btn::after {
+  bottom: 3px;
+}
+
+.burger-btn.active span {
+  transform: scale(0);
+}
+
+.burger-btn.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -25%);
+}
+
+.burger-btn.active::after {
+  top: 50%;
+  transform: rotate(45deg) translate(0, 25%);
 }
